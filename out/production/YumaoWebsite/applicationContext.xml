@@ -41,6 +41,9 @@
                 <value>com/niu/yumao/domain/Info.hbm.xml</value>
                 <value>com/niu/yumao/domain/Category.hbm.xml</value>
                 <value>com/niu/yumao/domain/Product.hbm.xml</value>
+                <value>com/niu/yumao/domain/News.hbm.xml</value>
+                <value>com/niu/yumao/domain/NewsType.hbm.xml</value>
+                <value>com/niu/yumao/domain/Video.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -123,6 +126,23 @@
         <property name="categoryService" ref="categoryService"></property>
         <property name="infoService" ref="infoService"></property>
     </bean>
+    
+    
+    <!--新闻类型的配置-->
+    <!-- 分类管理action -->
+    <bean id="NewsTypeAction" class="com.niu.yumao.action.NewsTypeAction" scope="singleton">
+        <property name="newsTypeService" ref="newsTypeService"></property>
+    </bean>
+    <!-- 配置业务层的类 -->
+    <bean id="newsTypeService" class="com.niu.yumao.serviceImpl.NewsTypeServiceImpl">
+        <property name="newsTypeDao" ref="newsTypeDao"></property>
+    </bean>
+    <!-- 配置DAO的类 -->
+    <bean id="newsTypeDao" class="com.niu.yumao.daoImpl.NewsTypeDaoImpl">
+        <constructor-arg ref="sessionFactory"></constructor-arg>
+    </bean>
+
+
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"></property>

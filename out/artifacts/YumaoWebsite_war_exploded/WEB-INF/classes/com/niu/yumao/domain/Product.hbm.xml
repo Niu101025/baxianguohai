@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-12 9:12:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.niu.yumao.domain.Product" table="product">
+		<id name="pid" column="pid">
+			<generator class="native"></generator>
+		</id>
+		<property name="ishome" column="ishome" type="yes_no" />
+		<property name="pname" column="pname" length="20" />
+		<property name="pdesc" column="pdesc" />
+		<property name="ptime" column="ptime" length="20" />
+		<property name="pimg" column="pimg" />
+		<property name="pclicknum" column="pclicknum" />
+		<property name="pcontent" column="pcontent" type="text" length="65536" />
+
+		<!-- 配置关联关系的映射 name对应类中的属性 class对应属性属于哪个类 column对应该属性对应数据库中的哪一列，该列是外键 -->
+		<many-to-one name="category" class="com.niu.yumao.domain.Category"
+			lazy="false" column="cid"></many-to-one>
+	</class>
+</hibernate-mapping>

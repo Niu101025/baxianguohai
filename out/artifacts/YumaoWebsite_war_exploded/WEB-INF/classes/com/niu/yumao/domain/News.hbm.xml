@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-12 9:12:35 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<!-- //新闻标题
+    private String newsTitle;
+    //新闻副标题
+    private String newsTitle2;
+    //新聞類型
+    private String newsContent;
+    //新闻添加时间
+    private Date newsTime;
+    //新闻类型
+    private NewsType newsType;
+    //点击量
+    private Integer newsClickNum;-->
+	<class name="com.niu.yumao.domain.News" table="news">
+		<id name="newsId" column="newsId">
+			<generator class="native"></generator>
+		</id>
+		<property name="newsTitle" column="newsTitle" length="20" />
+		<property name="newsTitle2" column="newsTitle2"  length="100"/>
+		<property name="newsTime" column="newsTime" length="20" />
+		<property name="newsClickNum" column="newsClickNum" />
+		<property name="newsContent" column="newsContent" type="text" length="65536" />
+		<!-- 配置关联关系的映射 name对应类中的属性 class对应属性属于哪个类 column对应该属性对应数据库中的哪一列，该列是外键 -->
+		<many-to-one name="newsType" class="com.niu.yumao.domain.NewsType"
+			lazy="false" column="newsTypeId"></many-to-one>
+	</class>
+</hibernate-mapping>
