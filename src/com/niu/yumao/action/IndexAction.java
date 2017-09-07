@@ -49,7 +49,7 @@ public class IndexAction extends ActionSupport {
             getAndSaveInfo();
             return "findAllSuccess";
         } catch (Exception e) {
-            ActionContext.getContext().getValueStack().set("errorinfo", "查询热门商品时发生错误");
+            ActionContext.getContext().getValueStack().set("errorinfo", "查询热门商品时发生错误"+e.getMessage());
             return "findAllError";
         }
 
@@ -65,7 +65,7 @@ public class IndexAction extends ActionSupport {
             getAndSaveInfo();
             return "getInfoSuccess";
         } catch (Exception e) {
-            ActionContext.getContext().getValueStack().set("errorinfo", "获取网站详情时发生错误！");
+            ActionContext.getContext().getValueStack().set("errorinfo", "获取网站详情时发生错误！"+e.getMessage());
             return "getInfoError";
         }
 
@@ -76,7 +76,7 @@ public class IndexAction extends ActionSupport {
             getAndSaveInfo();
             return "getLeaveSuccess";
         } catch (Exception e) {
-            ActionContext.getContext().getValueStack().set("errorinfo", "获取网站详情时发生错误！");
+            ActionContext.getContext().getValueStack().set("errorinfo", "获取网站详情时发生错误！"+e.getMessage());
             return "getLeaveError";
         }
 
@@ -90,7 +90,7 @@ public class IndexAction extends ActionSupport {
 
             return "getAllCateSuccess";
         } catch (Exception e) {
-            ActionContext.getContext().getValueStack().set("errorinfo", "获取全部分类时发生错误！");
+            ActionContext.getContext().getValueStack().set("errorinfo", "获取全部分类时发生错误！"+e.getMessage());
             return "getAllCateError";
         }
     }
@@ -103,7 +103,7 @@ public class IndexAction extends ActionSupport {
 
             return "getAllCate1Success";
         } catch (Exception e) {
-            ActionContext.getContext().getValueStack().set("errorinfo", "获取全部分类时发生错误！");
+            ActionContext.getContext().getValueStack().set("errorinfo", "获取全部分类时发生错误！"+e.getMessage());
             return "getAllCate1Error";
         }
     }

@@ -21,7 +21,13 @@
 <link rel="stylesheet" href="<%=basePath %>css/admin.css">
 <script src="<%=basePath %>js/jquery.js"></script>
 <script src="<%=basePath %>js/pintuer.js"></script>
-<script src="<%=basePath1 %>ckeditor/ckeditor.js"></script>
+	<%--引入百度富文本编辑工具--%>
+	<!-- 配置文件 -->
+	<script type="text/javascript" src="<%=basePath1%>bdeditor/ueditor.config.js"></script>
+	<!-- 编辑器源码文件 -->
+	<script type="text/javascript" src="<%=basePath1%>bdeditor/ueditor.all.js"></script>
+	<link rel="stylesheet" type="text/css" href="<%=basePath1%>bddeditor/themes/default/css" />
+
 </head>
 <body>
 	<div class="panel admin-panel">
@@ -84,9 +90,12 @@
 						<label>内容：</label>
 					</div>
 					<div class="field">
-						<s:textarea name="pcontent" class="ckeditor" value="%{pcontent}"
-							style="height: 800px; border: 1px solid #ddd;"></s:textarea>
-						<div class="tips"></div>
+						<s:textarea id="newsEditor" name="pcontent" value="%{pcontent}"
+									style="height: 800px; border: 1px solid #ddd;"></s:textarea>
+						<script type="text/javascript">
+                            UE.getEditor('newsEditor');
+                            // var content = UE.getPlainTxt();//content就是编辑器的带格式的内容
+						</script>
 					</div>
 				</div>
 

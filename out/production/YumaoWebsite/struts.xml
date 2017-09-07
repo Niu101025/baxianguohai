@@ -61,15 +61,15 @@
 
         <action name="index_*" class="IndexAction" method="{1}">
             <result name="findAllSuccess">/jsp/user/index.jsp</result>
-            <result name="findAllError">/jsp/error.html</result>
+            <result name="findAllError">/jsp/sqlerror.jsp</result>
             <result name="getInfoSuccess">/jsp/user/intrduce.jsp</result>
-            <result name="getInfoError">/jsp/error.html</result>
+            <result name="getInfoError">/jsp/sqlerror.jsp</result>
             <result name="getLeaveSuccess">/jsp/user/leave.jsp</result>
-            <result name="getLeaveError">/jsp/error.html</result>
+            <result name="getLeaveError">//jsp/sqlerror.jsp</result>
             <result name="getAllCateSuccess">/jsp/user/allcate.jsp</result>
-            <result name="getAllCateError">/jsp/error.html</result>
+            <result name="getAllCateError">/jsp/sqlerror.jsp</result>
             <result name="getProductSuccess">/jsp/user/product.jsp</result>
-            <result name="getAllCate1Success">/jsp/user/allcate.jsp</result>
+            <result name="getAllCate1Success">/jsp/sqlerror.jsp</result>
             <result name="getAllCate1Error">/jsp/error.html</result>
             <result name="input">/jsp/error.html</result>
 
