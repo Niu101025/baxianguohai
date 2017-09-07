@@ -61,15 +61,15 @@
 
         <action name="index_*" class="IndexAction" method="{1}">
             <result name="findAllSuccess">/jsp/user/index.jsp</result>
-            <result name="findAllError">/jsp/error.html</result>
+            <result name="findAllError">/jsp/sqlerror.jsp</result>
             <result name="getInfoSuccess">/jsp/user/intrduce.jsp</result>
-            <result name="getInfoError">/jsp/error.html</result>
+            <result name="getInfoError">/jsp/sqlerror.jsp</result>
             <result name="getLeaveSuccess">/jsp/user/leave.jsp</result>
-            <result name="getLeaveError">/jsp/error.html</result>
+            <result name="getLeaveError">//jsp/sqlerror.jsp</result>
             <result name="getAllCateSuccess">/jsp/user/allcate.jsp</result>
-            <result name="getAllCateError">/jsp/error.html</result>
+            <result name="getAllCateError">/jsp/sqlerror.jsp</result>
             <result name="getProductSuccess">/jsp/user/product.jsp</result>
-            <result name="getAllCate1Success">/jsp/user/allcate.jsp</result>
+            <result name="getAllCate1Success">/jsp/sqlerror.jsp</result>
             <result name="getAllCate1Error">/jsp/error.html</result>
             <result name="input">/jsp/error.html</result>
 
@@ -85,6 +85,19 @@
         <action name="ckeditorUpload" class="com.niu.yumao.action.CkeditorUpload">
         </action>
 
+        <!-- 新闻管理-->
+        <action name="newsType_*" class="NewsTypeAction" method="{1}">
+            <result name="addNewsTypeSuccess" type="redirectAction">newsType_findAllNewsType.action</result>
+            <result name="addNewsTypeError">/jsp/admin/addcate.jsp</result>
+            <result name="findAllNewsTypeSuccess">/jsp/admin/cate.jsp</result>
+            <result name="findAllSuccess">/jsp/admin/add.jsp</result>
+            <result name="editNewsTypeSuccess">/jsp/admin/cateedit.jsp</result>
+            <result name="deleteNewsTypeFail" type="redirectAction">newsType_findAllNewsType.action</result>
+            <result name="deleteNewsTypeSuccess" type="redirectAction">newsType_findAllNewsType.action</result>
+            <result name="saveNewsTypeSuccess" type="redirectAction">newsType_findAllNewsType.action</result>
+            <result name="input">/jsp/error.html</result>
+        </action>
+        
     </package>
 
 </struts>    
