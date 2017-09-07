@@ -71,13 +71,13 @@
         <span class="icon-pencil-square-o"></span>发布管理
     </h2>
     <ul style="display: block">
-        <li><a href="<%=basePath1%>category_findAllCategory.action" target="right"><span
+        <li><a href="<%=basePath1%>newsType_findAllNewsType.action" target="right"><span
                 class="icon-caret-right"></span>新闻类型管理</a></li>
-        <li><a href="<%=basePath%>/addcate.jsp" target="right"><span
+        <li><a href="<%=basePath%>/addnewtype.jsp" target="right"><span
                 class="icon-caret-right"></span>添加新闻分类</a></li>
-        <li><a href="<%=basePath1%>product_findAllProduct.action" target="right"><span
+        <li><a href="<%=basePath1%>news_findAllNews.action" target="right"><span
                 class="icon-caret-right"></span>新闻管理</a></li>
-        <li><a href="<%=basePath1%>/category_findAll.action" target="right"><span
+        <li><a href="<%=basePath1%>/newsType_findAll.action" target="right"><span
                 class="icon-caret-right"></span>添加新闻</a></li>
     </ul>
     <h2>

@@ -21,6 +21,15 @@ public class News {
     //点击量
     private Integer newsClickNum;
 
+    private Boolean ishome;
+
+    public Boolean getIshome() {
+        return ishome;
+    }
+
+    public void setIshome(Boolean ishome) {
+        this.ishome = ishome;
+    }
 
     public Integer getNewsId() {
         return newsId;

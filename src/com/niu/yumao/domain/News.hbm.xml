@@ -19,6 +19,7 @@
 		<id name="newsId" column="newsId">
 			<generator class="native"></generator>
 		</id>
+		<property name="ishome" column="ishome" type="yes_no" />
 		<property name="newsTitle" column="newsTitle" length="20" />
 		<property name="newsTitle2" column="newsTitle2"  length="100"/>
 		<property name="newsTime" column="newsTime" length="20" />

@@ -88,16 +88,28 @@
         <!-- 新闻管理-->
         <action name="newsType_*" class="NewsTypeAction" method="{1}">
             <result name="addNewsTypeSuccess" type="redirectAction">newsType_findAllNewsType.action</result>
-            <result name="addNewsTypeError">/jsp/admin/addcate.jsp</result>
-            <result name="findAllNewsTypeSuccess">/jsp/admin/cate.jsp</result>
-            <result name="findAllSuccess">/jsp/admin/add.jsp</result>
-            <result name="editNewsTypeSuccess">/jsp/admin/cateedit.jsp</result>
+            <result name="addNewsTypeError">/jsp/admin/addNews.jsp</result>
+            <result name="findAllNewsTypeSuccess">/jsp/admin/newsType.jsp</result>
+            <result name="findAllSuccess">/jsp/admin/addNews.jsp</result>
+            <result name="editNewsTypeSuccess">/jsp/admin/newsTypeedit.jsp</result>
             <result name="deleteNewsTypeFail" type="redirectAction">newsType_findAllNewsType.action</result>
             <result name="deleteNewsTypeSuccess" type="redirectAction">newsType_findAllNewsType.action</result>
             <result name="saveNewsTypeSuccess" type="redirectAction">newsType_findAllNewsType.action</result>
             <result name="input">/jsp/error.html</result>
         </action>
-        
+
+
+        <action name="news_*" class="NewsAction" method="{1}">
+            <result name="saveNewsSuccess" type="redirectAction">newsType_findAll.action</result>
+            <result name="saveError" type="redirectAction">newsType_findAll.action</result>
+            <result name="findAllNewsSuccess">/jsp/admin/listNews.jsp</result>
+            <result name="findAllSuccess">/jsp/admin/listNews.jsp</result>
+            <result name="editNewsSuccess">/jsp/admin/editNews.jsp</result>
+            <result name="deleteSuccess" type="redirectAction">news_findAllNews.action</result>
+            <result name="saveSuccess" type="redirectAction">news_findAllNews.action</result>
+            <result name="input">/jsp/error.html</result>
+        </action>
+
     </package>
 
 </struts>    

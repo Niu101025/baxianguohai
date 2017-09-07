@@ -33,7 +33,7 @@ public class NewsTypeDaoImpl extends HibernateDaoSupport implements NewsTypeDao{
 	public NewsType findById(Integer cid) {
 		// TODO Auto-generated method stub
 		DetachedCriteria criteria = DetachedCriteria.forClass(NewsType.class);
-		criteria.add(Restrictions.eq("cid", cid));
+		criteria.add(Restrictions.eq("newsTypeId", cid));
 		List<NewsType> list = this.getHibernateTemplate().findByCriteria(criteria);
 		if(list!=null&&list.size()>0){
 			return list.get(0);

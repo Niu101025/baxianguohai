@@ -143,6 +143,21 @@
     </bean>
 
 
+    <!-- 分类管理action -->
+    <bean id="NewsAction" class="com.niu.yumao.action.NewsAction" scope="singleton">
+        <property name="newsService" ref="newsService"></property>
+        <property name="newsTypeService" ref="newsTypeService"></property>
+        <property name="infoService" ref="infoService"></property>
+    </bean>
+    <!-- 配置业务层的类 -->
+    <bean id="newsService" class="com.niu.yumao.serviceImpl.NewsServiceImpl">
+        <property name="newsDao" ref="newsDao"></property>
+    </bean>
+    <!-- 配置DAO的类 -->
+    <bean id="newsDao" class="com.niu.yumao.daoImpl.NewsDaoImpl">
+        <constructor-arg ref="sessionFactory"></constructor-arg>
+    </bean>
+    
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"></property>
