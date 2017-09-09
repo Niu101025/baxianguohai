@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ccba1d65-c591-43ff-8425-f349aefbe856" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/dom4j_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/dom4j_1_6_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/jsp/user/css/pagename.css" afterPath="$PROJECT_DIR$/WebContent/jsp/user/css/pagename.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/YumaoWebsite_war_exploded/jsp/user/css/pagename.css" afterPath="$PROJECT_DIR$/out/artifacts/YumaoWebsite_war_exploded/jsp/user/css/pagename.css" />
     </list>
     <ignored path="YumaoWebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,8 +96,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="350">
+              <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -974,12 +972,12 @@
       <workItem from="1504761373832" duration="50000" />
       <workItem from="1504763798460" duration="9350000" />
       <workItem from="1504790235210" duration="15369000" />
-      <workItem from="1504922754865" duration="1368000" />
+      <workItem from="1504922754865" duration="1599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229537000" />
+    <option name="totallyTimeSpent" value="229768000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1546,8 +1544,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="350">
+          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
           <folding />
         </state>
       </provider>
