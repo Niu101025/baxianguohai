@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 引入外部属性文件 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!-- 配置c3p0连接池 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driverClass}"></property>
+        <property name="jdbcUrl" value="${jdbc.url}"></property>
+        <property name="user" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+
+    <!-- 配置Hibernate的相关属性,与数据库链接相关的 -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <!-- 注入连接池 -->
+        <property name="dataSource" ref="dataSource"></property>
+        <!-- 配置 hibernate属性 -->
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">com.niu.yumao.config.DialectForInkfish</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+        <!-- 加载hibernate中的映射文件,源代码中是以数组的形式来写的，所以这里用list标签 -->
+        <property name="mappingResources">
+            <list>
+                <value>com/niu/yumao/domain/Leave.hbm.xml</value>
+                <value>com/niu/yumao/domain/Admin.hbm.xml</value>
+                <value>com/niu/yumao/domain/Info.hbm.xml</value>
+                <value>com/niu/yumao/domain/Category.hbm.xml</value>
+                <value>com/niu/yumao/domain/Product.hbm.xml</value>
+                <value>com/niu/yumao/domain/News.hbm.xml</value>
+                <value>com/niu/yumao/domain/NewsType.hbm.xml</value>
+                <value>com/niu/yumao/domain/Video.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 配置Action的类 -->
+    <!--
+        scope="prototype"  默认是singleton，即单例的，只在容器初始化时创建一次
+        prototype 是表示在每个调用时都会产生新的实例
+     -->
+    <bean id="loginAction" class="com.niu.yumao.action.LoginAction" scope="singleton">
+        <property name="adminService" ref="adminService"></property>
+    </bean>
+    <!-- 配置业务层的类 -->
+    <bean id="adminService" class="com.niu.yumao.serviceImpl.AdminServiceImpl">
+        <property name="adminDao" ref="adminDao"></property>
+    </bean>
+    <!-- 配置DAO的类 -->
+    <bean id="adminDao" class="com.niu.yumao.daoImpl.AdminDaoImpl">
+        <constructor-arg ref="sessionFactory"></constructor-arg>
+    </bean>
+
+
+    <!--处理留言的Action-->
+    <bean id="leaveAction" class="com.niu.yumao.action.LeaveAction" scope="singleton">
+        <property name="leaveService" ref="leaveService"></property>
+    </bean>
+    <!-- 配置业务层的类 -->
+    <bean id="leaveService" class="com.niu.yumao.serviceImpl.LeaveServiceImpl">
+        <property name="leaveDao" ref="leaveDao"></property>
+    </bean>
+    <!-- 配置DAO的类 -->
+    <bean id="leaveDao" class="com.niu.yumao.daoImpl.LeaveDaoImpl">
+        <constructor-arg ref="sessionFactory"></constructor-arg>
+    </bean>
+
+    <!-- 保存网站信息的action -->
+    <bean id="InfoAction" class="com.niu.yumao.action.InfoAction" scope="singleton">
+        <property name="infoService" ref="infoService"></property>
+    </bean>
+    <!-- 配置业务层的类 -->
+    <bean id="infoService" class="com.niu.yumao.serviceImpl.InfoServiceImpl">
+        <property name="infoDao" ref="infoDao"></property>
+    </bean>
+    <!-- 配置DAO的类 -->
+    <bean id="infoDao" class="com.niu.yumao.daoImpl.InfoDaoImpl">
+        <constructor-arg ref="sessionFactory"></constructor-arg>
+    </bean>
+
+    <!-- 分类管理action -->
+    <bean id="CategoryAction" class="com.niu.yumao.action.CategoryAction" scope="singleton">
+        <property name="categoryService" ref="categoryService"></property>
+    </bean>
+    <!-- 配置业务层的类 -->
+    <bean id="categoryService" class="com.niu.yumao.serviceImpl.CategoryServiceImpl">
+        <property name="categoryDao" ref="categoryDao"></property>
+    </bean>
+    <!-- 配置DAO的类 -->
+    <bean id="categoryDao" class="com.niu.yumao.daoImpl.CategoryDaoImpl">
+        <constructor-arg ref="sessionFactory"></constructor-arg>
+    </bean>
+
+    <!-- 分类管理action -->
+    <bean id="ProductAction" class="com.niu.yumao.action.ProductAction" scope="singleton">
+        <property name="productService" ref="productService"></property>
+        <property name="categoryService" ref="categoryService"></property>
+        <property name="infoService" ref="infoService"></property>
+    </bean>
+    <!-- 配置业务层的类 -->
+    <bean id="productService" class="com.niu.yumao.serviceImpl.ProductServiceImpl">
+        <property name="productDao" ref="productDao"></property>
+    </bean>
+    <!-- 配置DAO的类 -->
+    <bean id="productDao" class="com.niu.yumao.daoImpl.ProductDaoImpl">
+        <constructor-arg ref="sessionFactory"></constructor-arg>
+    </bean>
+
+    <!-- 分类管理action -->
+    <bean id="IndexAction" class="com.niu.yumao.action.IndexAction" scope="singleton">
+        <property name="productService" ref="productService"></property>
+        <property name="categoryService" ref="categoryService"></property>
+        <property name="infoService" ref="infoService"></property>
+    </bean>
+    
+    
+    <!--新闻类型的配置-->
+    <!-- 分类管理action -->
+    <bean id="NewsTypeAction" class="com.niu.yumao.action.NewsTypeAction" scope="singleton">
+        <property name="newsTypeService" ref="newsTypeService"></property>
+    </bean>
+    <!-- 配置业务层的类 -->
+    <bean id="newsTypeService" class="com.niu.yumao.serviceImpl.NewsTypeServiceImpl">
+        <property name="newsTypeDao" ref="newsTypeDao"></property>
+    </bean>
+    <!-- 配置DAO的类 -->
+    <bean id="newsTypeDao" class="com.niu.yumao.daoImpl.NewsTypeDaoImpl">
+        <constructor-arg ref="sessionFactory"></constructor-arg>
+    </bean>
+
+
+    <!-- 分类管理action -->
+    <bean id="NewsAction" class="com.niu.yumao.action.NewsAction" scope="singleton">
+        <property name="newsService" ref="newsService"></property>
+        <property name="newsTypeService" ref="newsTypeService"></property>
+        <property name="infoService" ref="infoService"></property>
+    </bean>
+    <!-- 配置业务层的类 -->
+    <bean id="newsService" class="com.niu.yumao.serviceImpl.NewsServiceImpl">
+        <property name="newsDao" ref="newsDao"></property>
+    </bean>
+    <!-- 配置DAO的类 -->
+    <bean id="newsDao" class="com.niu.yumao.daoImpl.NewsDaoImpl">
+        <constructor-arg ref="sessionFactory"></constructor-arg>
+    </bean>
+    
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 开启注解事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>

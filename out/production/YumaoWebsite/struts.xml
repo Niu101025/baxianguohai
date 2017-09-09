@@ -69,8 +69,8 @@
             <result name="getAllCateSuccess">/jsp/user/allcate.jsp</result>
             <result name="getAllCateError">/jsp/sqlerror.jsp</result>
             <result name="getProductSuccess">/jsp/user/product.jsp</result>
-            <result name="getAllCate1Success">/jsp/sqlerror.jsp</result>
-            <result name="getAllCate1Error">/jsp/error.html</result>
+            <result name="getAllCate1Success">/jsp/user/allcate.jsp</result>
+            <result name="getAllCate1Error">/jsp/sqlerror.jsp</result>
             <result name="input">/jsp/error.html</result>
 
         </action>
