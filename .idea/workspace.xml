@@ -7,13 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ccba1d65-c591-43ff-8425-f349aefbe856" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/jsp/user/css/pagename.css" afterPath="$PROJECT_DIR$/WebContent/jsp/user/css/pagename.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/jsp/user/index.jsp" afterPath="$PROJECT_DIR$/WebContent/jsp/user/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/YumaoWebsite/log4j.properties" afterPath="$PROJECT_DIR$/out/production/YumaoWebsite/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/YumaoWebsite/struts.xml" afterPath="$PROJECT_DIR$/out/production/YumaoWebsite/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/log4j.properties" afterPath="$PROJECT_DIR$/src/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
     </list>
     <ignored path="YumaoWebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pagename.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pagename.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/jsp/user/css/pagename.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6314286">
+            <state vertical-scroll-proportion="-2.8701298">
               <caret line="194" column="22" selection-start-line="194" selection-start-column="22" selection-end-line="194" selection-end-column="22" />
               <folding>
                 <marker date="1504886165000" expanded="true" signature="11860:11884" placeholder="{...}" />
@@ -102,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="intrduce.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/jsp/user/intrduce.jsp">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.625">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.475">
+              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -194,7 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/niu/yumao/utils/OperateImage.java" />
         <option value="$PROJECT_DIR$/WebContent/jsp/user/product.jsp" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/lib/struts2-core-2.3.24.jar!/org/apache/struts2/ServletActionContext.class" />
         <option value="$PROJECT_DIR$/src/com/niu/yumao/action/CkeditorUpload.java" />
@@ -245,6 +239,7 @@
         <option value="$PROJECT_DIR$/WebContent/jsp/user/css/base.css" />
         <option value="$PROJECT_DIR$/WebContent/jsp/user/index.jsp" />
         <option value="$PROJECT_DIR$/WebContent/jsp/user/css/pagename.css" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -439,6 +434,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YumaoWebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baxianguohai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1123,12 +1132,12 @@
       <workItem from="1504761223427" duration="103000" />
       <workItem from="1504761373832" duration="50000" />
       <workItem from="1504763798460" duration="9350000" />
-      <workItem from="1504790235210" duration="14950000" />
+      <workItem from="1504790235210" duration="15369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227750000" />
+    <option name="totallyTimeSpent" value="228169000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1368,11 +1377,11 @@
         <state vertical-scroll-proportion="964.7917">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1504886167000" expanded="true" signature="59:100955" placeholder="..." />
-            <marker date="1504886167000" expanded="true" signature="107:225" placeholder="..." />
-            <marker date="1504886167000" expanded="true" signature="132:210" placeholder="..." />
-            <marker date="1504886167000" expanded="true" signature="264:358" placeholder="..." />
-            <marker date="1504886167000" expanded="true" signature="358:380" placeholder="..." />
+            <marker date="1504921297000" expanded="true" signature="59:100802" placeholder="..." />
+            <marker date="1504921297000" expanded="true" signature="107:225" placeholder="..." />
+            <marker date="1504921297000" expanded="true" signature="132:210" placeholder="..." />
+            <marker date="1504921297000" expanded="true" signature="264:358" placeholder="..." />
+            <marker date="1504921297000" expanded="true" signature="358:380" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1392,14 +1401,6 @@
             <element signature="e#909#910#0" expanded="false" />
             <element signature="e#952#953#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.259259">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1734,11 +1735,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/jsp/user/css/pagename.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6314286">
+        <state vertical-scroll-proportion="-2.8701298">
           <caret line="194" column="22" selection-start-line="194" selection-start-column="22" selection-end-line="194" selection-end-column="22" />
           <folding>
             <marker date="1504886165000" expanded="true" signature="11860:11884" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.475">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
