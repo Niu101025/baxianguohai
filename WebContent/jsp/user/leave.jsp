@@ -39,7 +39,7 @@
 
 <body>
 
-
+<script src="https://qiyukf.com/script/e1cd14efd075fdfb7d833ce92ace638c.js"></script>
 <!--header-->
 
 <div class="header">
@@ -58,22 +58,24 @@
 
     <div class="header_bottom">
 
-        <s:a href="#"><h1><s:property value="%{websitename}"/></h1></s:a>
-        <%--<s:a href="#"><img src="<s:property value="%{logo}"/>" width="300" height="60" alt="" title="漯河迎辉羽毛"></s:a>--%>
+
+        <%--<s:a href="#"><h1><s:property value="%{websitename}"/></h1></s:a>--%>
+        <s:a href="#"><img src="<s:property value="%{logo}"/>" width="72px" height="72px" alt=""></s:a>
         <ul>
+
             <li><a href="<%=basePath1%>index_findAll.action">网站首页</a></li>
-            <li><a href="<%=basePath1%>index_goInfoDetail.action">公司简介</a></li>
-            <li><a href="<%=basePath1%>index_getAllCate.action?categoryid=-1">产品中心</a></li>
-            <li><a href="#">视频中心</a></li>
+            <li><a href="<%=basePath1%>index_getAllNewsType.action?newsTypeId=-1">加盟公告</a></li>
+            <li><a href="<%=basePath1%>index_findVideo.action">视频中心</a></li>
+            <li><a href="<%=basePath1%>index_goInfoDetail.action">品牌简介</a></li>
+            <li><a href="<%=basePath1%>index_getAllCate.action?categoryid=-1">饕餮盛宴</a></li>
             <li>
-                <div style="background-color: red;padding-left: 10px;padding-right: 10px">
+                <div style="border-radius: 5px 5px 5px 5px; background: #E60013;padding-left: 10px;padding-right: 10px">
                     <%--href="<%=basePath1%>index_findAll.action"--%>
-                    <p class="p_header" >给我留言</p>
+                    <p class="p_header">联系我们</p>
                 </div>
             </li>
-           <%-- <li><a href="<%=basePath1%>index_goLeave.action">给我留言</a></li>--%>
-
         </ul>
+
 
     </div>
 

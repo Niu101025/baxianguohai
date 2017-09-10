@@ -84,9 +84,7 @@
         <span class="icon-pencil-square-o"></span>视频管理
     </h2>
     <ul style="display: block">
-        <li><a href="<%=basePath1%>category_findAllCategory.action" target="right"><span
-                class="icon-caret-right"></span>视频管理</a></li>
-        <li><a href="<%=basePath%>/addcate.jsp" target="right"><span
+        <li><a href="<%=basePath1%>video_findVideo.action" target="right"><span
                 class="icon-caret-right"></span>添加视频</a></li>
     </ul>
 </div>

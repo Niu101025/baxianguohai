@@ -6,15 +6,15 @@ import java.util.List;
 
 public interface NewsTypeService {
 
-	void addNewsType(NewsType newsType);
+    void addNewsType(NewsType newsType);
 
-	List<NewsType> findAllNewsType();
+    List<NewsType> findAllNewsType();
 
-	NewsType findById(Integer newTypeId);
+    NewsType findById(Integer newTypeId);
 
-	void saveNewsType(NewsType newsType);
+    void saveNewsType(NewsType newsType);
 
-	void deleteNewsType(NewsType newsType);
+    void deleteNewsType(NewsType newsType);
 
-	
+    List<NewsType> findAllHomeShowNewsType();
 }

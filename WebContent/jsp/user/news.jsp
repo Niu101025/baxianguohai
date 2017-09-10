@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: niuhongbin
-  Date: 16/12/12
-  Time: 下午3:35
+  Date: 16/12/14
+  Time: 下午9:28
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -21,7 +21,7 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <%--  <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>--%>
+    <%--   <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>--%>
     <title><s:property value="%{websitename}"/></title>
     <meta name="baidu-site-verification" content="<s:property value="%{verfication}"/>"/>
     <meta content="<s:property value="%{websitename}"/> <s:property value="%{keywords}"/>" name="keywords"/>
@@ -31,27 +31,24 @@
     <link href="<%=basePath%>css/base.css" rel="stylesheet" type="text/css">
 
     <link href="<%=basePath%>css/pagename.css" rel="stylesheet" type="text/css">
-    <link href="<%=basePath%>css/video-js.min.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="<%=basePath%>js/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="<%=basePath%>js/video.min.js"></script>
-    <script type="text/javascript" src="<%=basePath%>js/jquery.SuperSlide.2.1.js"></script>
-    <script type="text/javascript" src="<%=basePath%>js/jquery.masonry.min.js"></script>
     <script type="text/javascript"
             src="http://api.map.baidu.com/api?v=2.0&ak=<s:property value="%{mapkey}"/>"></script>
+
 
 </head>
 
 
 <body>
-
 <script src="https://qiyukf.com/script/e1cd14efd075fdfb7d833ce92ace638c.js"></script>
-<!--header开始-->
+
+<!--header-->
 
 <div class="header">
 
     <div class="w1000">
 
         <p>你好，欢迎光临<s:property value="%{websitename}"/>！</p>
+
 
     </div>
 
@@ -70,68 +67,34 @@
             <li><a href="<%=basePath1%>index_getAllNewsType.action?newsTypeId=-1">加盟公告</a></li>
             <li><a href="<%=basePath1%>index_findVideo.action">视频中心</a></li>
             <li><a href="<%=basePath1%>index_goInfoDetail.action">品牌简介</a></li>
-            <li>
-                <div style="border-radius: 5px 5px 5px 5px; background: #E60013;padding-left: 10px;padding-right: 10px">
-                    <%--href="<%=basePath1%>index_findAll.action"--%>
-                    <p class="p_header">饕餮盛宴</p>
-                </div>
-            </li>
+            <li><a href="<%=basePath1%>index_getAllCate.action?categoryid=-1">饕餮盛宴</a></li>
             <li><a href="<%=basePath1%>index_goLeave.action">联系我们</a></li>
         </ul>
-
-
 
     </div>
 
 </div>
-
-
 <!--header结束-->
-
-
 <div class="container">
+
+    <!--banner开始-->
+
+    <%--<div class="banner_erji mar">
+
+        <img src="<s:property value="%{pimg}"/>" width="1000" height="187" alt="" title="">
+
+    </div>--%>
+
+    <!--banner结束-->
+
 
     <!--content开始-->
 
     <div class="content clearfix">
 
-
-        <%-- <p class="p_tit1">关于迎辉羽毛</p>--%>
-
         <div class="leftbar mar">
 
-            <div class="leftnav">
 
-                <h1>所有种类</h1>
-
-                <ul class="ul_left">
-
-                    <s:iterator value="allCategory" var="c">
-                        <s:if test="#c.cid==categoryid">
-                            <li><h3><a style="color: red"
-                                       href="<%=basePath1%>index_getAllCate1.action?categoryid=<s:property
-                               value="#c.cid"/>"><s:property
-                                    value="#c.cname"/></a></h3>
-
-                            </li>
-
-                        </s:if>
-                        <s:else>
-                            <li><h3><a
-                                    href="<%=basePath1%>index_getAllCate1.action?categoryid=<s:property
-                               value="#c.cid"/>"><s:property
-                                    value="#c.cname"/></a></h3>
-
-                            </li>
-                        </s:else>
-
-                    </s:iterator>
-
-
-                </ul>
-
-
-            </div>
             <div class="left_lx">
 
                 <h1>联系方式</h1>
@@ -183,64 +146,66 @@
             </div>
         </div>
 
-        <div class="rightbar mar">
+        <div class="rightbar">
 
 
-            <ul id="masonry" class="ul_zj clearfix">
+            <div class="con_news">
 
 
-                <s:iterator value="allProduct" var="p">
+                <div style="float: left;height: 43px;line-height: 43px">
+                    <s:if test="isfirst">
+                        <h2>已经是第一个</h2>
+                    </s:if>
+                    <s:else>
+                        <a href="<%=basePath1%>index_findNews.action?newsId=<s:property value="preNewId"/>&categoryid=<s:property value="cid"/>">
+                            <h2 style="color: #0f8f3a;font-size: 20px">上一个</h2></a>
 
-                    <li class="box">
+                    </s:else>
+                </div>
 
-                        <a href="<%=basePath1%>index_findProduct.action?pid=<s:property
-                          value="#p.pid"/>&categoryid=<s:property value="#p.category.cid"/>&ishome=false"><img
-                                src="<s:property value="#p.pimg"/>"
-                                width="220px">
-                            <span><s:property value="#p.pname"/></span>
-                        </a>
-                    </li>
-                </s:iterator>
 
-            </ul>
-            <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone"
-                                                                                              data-cmd="qzone"></a><a
-                    href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a
-                    href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin"
-                                                                         data-cmd="weixin"></a></div>
-            <script>window._bd_share_config = {
-                "common": {
-                    "bdSnsKey": {},
-                    "bdText": "",
-                    "bdMini": "2",
-                    "bdPic": "",
-                    "bdStyle": "0",
-                    "bdSize": "16"
-                },
-                "share": {},
-                "image": {
-                    "viewList": ["qzone", "tsina", "tqq", "renren", "weixin"],
-                    "viewText": "分享到：",
-                    "viewSize": "16"
-                },
-                "selectShare": {
-                    "bdContainerClass": null,
-                    "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin"]
-                }
-            };
-            with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
-            <div class="paging"></div>
+                <div style="float: right;height: 43px;line-height: 43px">
+
+                    <s:if test="islast">
+                        <h2>已经是最后一个</h2>
+                    </s:if>
+                    <s:else>
+                        <a href="<%=basePath1%>index_findNews.action?newsId=<s:property value="nextNewId"/>&newsTypeId=<s:property value="newsTypeId"/>">
+                            <h2 style="color: #0f8f3a;font-size: 20px">下一个</h2></a>
+                    </s:else>
+                </div>
+                <div>
+                    <p class="p_tit3">
+
+                        <span><s:property value="%{newsTitle}"/></span>
+
+                        发布人:<s:property value="%{name}"/>　 发布时间:
+                    <td><s:date name="%{ptime}" format="yyyy-MM-dd HH:mm:ss"/></td>
+
+                    </p>
+                </div>
+
+                <div>
+                    <p class="p_tit3">
+                        <s:property value="%{newsTitle2}" escape="false"/>
+                    </p>
+                </div>
+                <div class="con">
+                    <s:property value="%{newsContent}" escape="false"/>
+                </div>
+            </div>
+
 
         </div>
 
-
     </div>
 
-    <!--content 结束-->
+    <!--content结束-->
 
 </div>
 
 <!--footer开始-->
+
 
 <div class="footer">
     <p>Copyright &copy; 2016 All Rights Reserved 版权所有 </p>
@@ -248,21 +213,10 @@
 
 </div>
 
-<!--footer 结束-->
 
 <!--footer 结束-->
-<script type="text/javascript">
-    $(function () {
-        var $container = $('#masonry');
-        $container.imagesLoaded(function () {
-            $container.masonry({
-                itemSelector: '.box',
-            });
-        });
-    });
-</script>
+
 
 </body>
 
 </html>
-

@@ -79,6 +79,20 @@
         <constructor-arg ref="sessionFactory"></constructor-arg>
     </bean>
 
+    <!-- 保存网站video的action -->
+    <bean id="VideoAction" class="com.niu.yumao.action.VideoAction" scope="singleton">
+        <property name="videoService" ref="videoService"></property>
+    </bean>
+    <!-- 配置业务层的类 -->
+    <bean id="videoService" class="com.niu.yumao.serviceImpl.VideoServiceImpl">
+        <property name="videoDao" ref="videoDao"></property>
+    </bean>
+    <!-- 配置DAO的类 -->
+    <bean id="videoDao" class="com.niu.yumao.daoImpl.VideoDaoImpl">
+        <constructor-arg ref="sessionFactory"></constructor-arg>
+    </bean>
+
+
     <!-- 保存网站信息的action -->
     <bean id="InfoAction" class="com.niu.yumao.action.InfoAction" scope="singleton">
         <property name="infoService" ref="infoService"></property>
@@ -125,9 +139,12 @@
         <property name="productService" ref="productService"></property>
         <property name="categoryService" ref="categoryService"></property>
         <property name="infoService" ref="infoService"></property>
+        <property name="newsTypeService" ref="newsTypeService"></property>
+        <property name="videoService" ref="videoService"/>
+        <property name="newsService" ref="newsService"/>
     </bean>
-    
-    
+
+
     <!--新闻类型的配置-->
     <!-- 分类管理action -->
     <bean id="NewsTypeAction" class="com.niu.yumao.action.NewsTypeAction" scope="singleton">
@@ -157,7 +174,7 @@
     <bean id="newsDao" class="com.niu.yumao.daoImpl.NewsDaoImpl">
         <constructor-arg ref="sessionFactory"></constructor-arg>
     </bean>
-    
+
     <!-- 配置事务管理器 -->
     <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"></property>

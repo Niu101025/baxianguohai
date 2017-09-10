@@ -42,7 +42,7 @@
 
 
 <body>
-
+<script src="https://qiyukf.com/script/e1cd14efd075fdfb7d833ce92ace638c.js"></script>
 
 <!--header开始-->
 
@@ -50,7 +50,12 @@
 
     <div class="w1000">
 
-        <p>你好，欢迎光临<s:property value="%{websitename}"/>！</p>
+        <p style="float: left">你好，欢迎光临<s:property value="%{websitename}"/>！</p>
+        <div style="float:right;">
+            <a href="#" style="color: #E60013">加入收藏</a>
+            <a href="#" style="color: #E60013">联系我们</a>
+            <a href="#" style="color: #E60013">加入我们</a>
+        </div>
 
     </div>
 
@@ -61,19 +66,20 @@
 
     <div class="header_bottom">
 
-        <s:a href="#"><h1><s:property value="%{websitename}"/></h1></s:a>
-        <%--<s:a href="#"><img src="<s:property value="%{logo}"/>" width="300" height="60" alt=""></s:a>--%>
+        <%--<s:a href="#"><h1><s:property value="%{websitename}"/></h1></s:a>--%>
+        <s:a href="#"><img src="<s:property value="%{logo}"/>" width="72px" height="72px" alt=""></s:a>
         <ul>
             <li>
-                <div style="background-color: red;padding-left: 10px;padding-right: 10px">
+                <div style="border-radius: 5px 5px 5px 5px; background: #E60013;padding-left: 10px;padding-right: 10px">
                     <%--href="<%=basePath1%>index_findAll.action"--%>
                     <p class="p_header">网站首页</p>
                 </div>
             </li>
-            <li><a href="<%=basePath1%>index_goInfoDetail.action">公司简介</a></li>
-            <li><a href="<%=basePath1%>index_getAllCate.action?categoryid=-1">产品中心</a></li>
-            <li><a href="#">视频中心</a></li>
-            <li><a href="<%=basePath1%>index_goLeave.action">给我留言</a></li>
+            <li><a href="<%=basePath1%>index_getAllNewsType.action?newsTypeId=-1">加盟公告</a></li>
+            <li><a href="<%=basePath1%>index_findVideo.action">视频中心</a></li>
+            <li><a href="<%=basePath1%>index_goInfoDetail.action">品牌简介</a></li>
+            <li><a href="<%=basePath1%>index_getAllCate.action?categoryid=-1">饕餮盛宴</a></li>
+            <li><a href="<%=basePath1%>index_goLeave.action">联系我们</a></li>
         </ul>
 
     </div>
@@ -181,40 +187,11 @@
 
         </div>--%>
         <div class="leftbar mar">
-
-            <div class="left_lx">
-                <h1>新闻中心</h1>
-                <ul>
-                    <li><a href="#">11111</a></li>
-                    <li><a href="#">11111</a></li>
-                    <li><a href="#">11111</a></li>
-                    <li><a href="#">11111</a></li>
-                    <li><a href="#">11111</a></li>
-                </ul>
-            </div>
-
-
-            <div class="left_lx">
-                <h1>美味视频</h1>
-                <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="270"
-                       height="200"
-                       poster="http://video-js.zencoder.com/oceans-clip.png"
-                       data-setup="{}">
-                    <source src="<%=basePath1%>videoviewdemo.mp4" type='video/mp4'/>
-                    <!-- Tracks need an ending tag thanks to IE9 -->
-                </video>
-                <script type="text/javascript">
-                    var myPlayer = videojs('example_video_1');
-                    videojs("example_video_1").ready(function () {
-                        var myPlayer = this;
-                        myPlayer.play();
-                    });
-                </script>
-            </div>
-
             <div class="left_lx">
 
-                <h1>联系方式</h1>
+                <h1><span>联系方式</span>
+
+                </h1>
                 <s:if test="!''.equals(name)">
                     <p>联系人：<s:property value="%{name}"/></p>
                 </s:if>
@@ -247,84 +224,141 @@
                     <p>邮编：<s:property value="%{youbian}"/></p>
                 </s:if>
             </div>
-            <div class="left_lx mar">
-                <h1>地图</h1>
+
+            <s:iterator value="showNewsBeans" var="showNews">
+                <div class="left_lx left_lx_height">
+                    <h1><span><s:property value="#showNews.newsType.newsTypeName"/></span>
+                        <span style="float: right; border-bottom-width: 0px;"><a href="<%=basePath1%>index_getAllNewsType1.action?newsTypeId=<s:property
+                               value="#showNews.newsType.newsTypeId"/>">查看更多</a></span>
+                    </h1>
+                    <ul>
+                        <s:iterator value="#showNews.newsList" var="news">
+                            <li><a href="<%=basePath1%>index_findNews.action?newsId=<s:property
+                          value="#news.newsId"/>&newsTypeId=<s:property value="#showNews.newsType.newsTypeId"/>"><s:property value="#news.newsTitle"/></a></li>
+                        </s:iterator>
+
+
+                    </ul>
+                </div>
+
+            </s:iterator>
+
+            <%--  <div class="left_lx left_lx_height">
+                  <h1><span>新闻中心</span>
+                      <span style="float: right; border-bottom-width: 0px;"><a href="#">查看更多</a></span>
+                  </h1>
+                  <ul>
+                      <li><a href="#">11111</a></li>
+
+                  </ul>
+              </div>
+
+              <div class="left_lx left_lx_height">
+                  <h1><span>加盟信息</span>
+                      <span style="float: right; border-bottom-width: 0px;"><a href="#">查看更多</a></span>
+                  </h1>
+                  <ul>
+                      <li><a href="#">11111</a></li>
+                      <li><a href="#">11111</a></li>
+                      <li><a href="#">11111</a></li>
+                      <li><a href="#">11111</a></li>
+                      <li><a href="#">11111</a></li>
+                  </ul>
+              </div>
+
+              <div class="left_lx left_lx_height">
+                  <h1><span>最新动态</span>
+                      <span style="float: right; border-bottom-width: 0px;"><a href="#">查看更多</a></span>
+                  </h1>
+                  <ul>
+                      <li><a href="#">11111</a></li>
+                      <li><a href="#">11111</a></li>
+                      <li><a href="#">11111</a></li>
+                      <li><a href="#">11111</a></li>
+                      <li><a href="#">11111</a></li>
+                  </ul>
+              </div>--%>
+            <%--  <div class="left_lx">
+                  <h1><span>美味视频</span></h1>
+                  <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="270"
+                         height="200"
+                         poster="http://video-js.zencoder.com/oceans-clip.png"
+                         data-setup="{}">
+                      <source src="<%=basePath1%>videoviewdemo.mp4" type='video/mp4'/>
+                      <!-- Tracks need an ending tag thanks to IE9 -->
+                  </video>
+                  <script type="text/javascript">
+                      var myPlayer = videojs('example_video_1');
+                      videojs("example_video_1").ready(function () {
+                          var myPlayer = this;
+                          myPlayer.play();
+                      });
+                  </script>
+              </div>--%>
+        </div>
+
+
+        <ul class="ul_jishu  rightbar ">
+            <s:if test="hotProduct.size()>0">
+                <li class="fl">
+                    <div class="clearfix">
+                        <p class="p_tit1">热门小吃</p>
+                        <div class="picScroll-left">
+                            <div class="hd">
+                                <a class="next" style="margin-top: 100px"><</a>
+                                <a class="prev" style="margin-top: 100px ">></a>
+                            </div>
+                            <div class="bd">
+                                <ul class="picList">
+                                    <s:iterator value="hotProduct" var="h">
+                                        <li>
+                                            <div class="pic">
+                                                <a class="f14 pt10"
+                                                   href="<%=basePath1%>index_findProduct.action?pid=<s:property value="#h.pid"/>&categoryid=-1&ishome=true"><img
+                                                        src="<s:property value="#h.pimg"/>">
+                                                    <s:property value="#h.pname"/>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </s:iterator>
+                                </ul>
+                            </div>
+                            <!--为热销产品模块图片向左滚到-->
+                            <script type="text/javascript">
+                                jQuery(".picScroll-left").slide({
+                                    delayTime: 5000,
+                                    interTime: 5000,
+                                    triggerTime: 5000,
+                                    titCell: ".hd ul",
+                                    mainCell: ".bd ul",
+                                    autoPage: true,
+                                    effect: "left",
+                                    autoPlay: true,
+                                    vis: 1,
+                                    trigger: "click"
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                </li>
+            </s:if>
+
+
+            <li class="fl">
+                <p class="p_tit1">门店地址</p>
+                <%-- <h1 style="text-align: center;font-size: 14px">门店地址</h1>--%>
                 <div id="containers"></div>
                 <script type="text/javascript">
                     var map = new BMap.Map("containers");          // 创建地图实例
                     var jingdu = document.getElementById("jingdu").value;
                     var weidu = document.getElementById("weidu").value;
                     var point = new BMap.Point(jingdu, weidu);  // 创建点坐标
-                    map.centerAndZoom(point, 13);// 初始化地图，设置中心点坐标和地图级别
+                    map.centerAndZoom(point, 11);// 初始化地图，设置中心点坐标和地图级别
                     map.addControl(new BMap.NavigationControl());
                     var marker = new BMap.Marker(point);        // 创建标注
                     map.addOverlay(marker);                     // 将标注添加到地图中
                 </script>
-            </div>
-        </div>
-
-
-        <ul class="ul_jishu  rightbar ">
-
-            <li class="fl">
-                <p class="p_tit1">热销产品</p>
-
-                <div class="picScroll-left">
-
-                    <div class="hd">
-
-                        <a class="next" style="margin-top: 100px"><</a>
-
-                        <a class="prev" style="margin-top: 100px ">></a>
-
-                    </div>
-
-                    <div class="bd">
-
-                        <ul class="picList">
-                            <s:iterator value="hotProduct" var="h">
-
-                                <li>
-
-                                    <div class="pic">
-
-                                        <a class="f14 pt10"
-                                           href="<%=basePath1%>index_findProduct.action?pid=<s:property value="#h.pid"/>&categoryid=-1&ishome=true"><img
-                                                src="<s:property value="#h.pimg"/>">
-                                            <s:property value="#h.pname"/>
-                                        </a>
-                                    </div>
-                                </li>
-                            </s:iterator>
-
-                        </ul>
-
-                    </div>
-
-
-                    <!--为热销产品模块图片向左滚到-->
-
-                    <script type="text/javascript">
-
-                        jQuery(".picScroll-left").slide({
-                            titCell: ".hd ul",
-                            mainCell: ".bd ul",
-                            autoPage: true,
-                            effect: "left",
-                            autoPlay: true,
-                            vis: 4,
-                            trigger: "click"
-                        });
-
-                    </script>
-
-
-                </div>
-            </li>
-
-            <li class="fl">
-                <a href="<%=basePath%>template/introduce.html">迎辉简介</a><br>
-                <s:property value="%{infodesc}" escape="false"/>
             </li>
 
 
@@ -332,7 +366,10 @@
 
 
     </div>
-
+    <div class="content">
+        <a href="<%=basePath%>template/introduce.html"></a><br>
+        <s:property value="%{infodesc}" escape="false"/>
+    </div>
     <!--content 结束-->
 
 </div>

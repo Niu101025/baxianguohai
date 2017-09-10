@@ -26,7 +26,7 @@
     <script type="text/javascript" src="<%=basePath1%>bdeditor/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->
     <script type="text/javascript" src="<%=basePath1%>bdeditor/ueditor.all.js"></script>
-    <link rel="stylesheet" type="text/css" href="<%=basePath1%>bddeditor/themes/default/css" />
+   <%-- <link rel="stylesheet" type="text/css" href="<%=basePath1%>bdeditor/themes/default/css"/>--%>
 </head>
 <body>
 <div class="panel admin-panel">

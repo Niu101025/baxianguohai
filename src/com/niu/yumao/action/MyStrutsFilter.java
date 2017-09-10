@@ -20,8 +20,8 @@ public class MyStrutsFilter extends StrutsPrepareAndExecuteFilter {
                          FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         String url = request.getRequestURI();
-        if (url.contains("/bdeditor/jsp/")) {
-            chain.doFilter(req, res);
+        if (url.substring(url.lastIndexOf(".") + 1).equals("css") || url.substring(url.lastIndexOf(".") + 1).equals("js") || url.contains("/bdeditor/jsp/")) {
+            chain.doFilter(request, res);
         } else {
             super.doFilter(req, res, chain);
         }

@@ -23,7 +23,7 @@ public class NewsTypeServiceImpl implements NewsTypeService {
     @Override
     public List<NewsType> findAllNewsType() {
         // TODO Auto-generated method stub
-        return newsTypeDao.findAllNewsType() ;
+        return newsTypeDao.findAllNewsType();
     }
 
     @Override
@@ -42,5 +42,10 @@ public class NewsTypeServiceImpl implements NewsTypeService {
     public void deleteNewsType(NewsType newsType) {
         // TODO Auto-generated method stub
         newsTypeDao.deleteNewsType(newsType);
+    }
+
+    @Override
+    public List<NewsType> findAllHomeShowNewsType() {
+        return newsTypeDao.findAllHomeShowNewsType();
     }
 }

@@ -33,8 +33,17 @@
             <result name="findInfoSuccess">/jsp/admin/info.jsp</result>
             <result name="saveSuccess">/jsp/admin/info.jsp</result>
             <result name="saveError">/jsp/admin/info.jsp</result>
-            <result name="input">/jsp/error.html</result>
+            <result name="input">/jsp/admin/info.jsp</result>
         </action>
+
+        <action name="video_*" class="VideoAction" method="{1}">
+            <result name="findVideo1Success">/jsp/user/addvideo.jsp</result>
+            <result name="findVideoSuccess">/jsp/admin/addvideo.jsp</result>
+            <result name="saveVideoSuccess">/jsp/admin/addvideo.jsp</result>
+            <result name="saveError">/jsp/admin/addvideo.jsp</result>
+            <result name="input">/jsp/admin/addvideo.jsp</result>
+        </action>
+
         <action name="category_*" class="CategoryAction" method="{1}">
             <result name="addCategorySuccess" type="redirectAction">category_findAllCategory.action</result>
             <result name="addCategoryError">/jsp/admin/addcate.jsp</result>
@@ -71,6 +80,13 @@
             <result name="getProductSuccess">/jsp/user/product.jsp</result>
             <result name="getAllCate1Success">/jsp/user/allcate.jsp</result>
             <result name="getAllCate1Error">/jsp/sqlerror.jsp</result>
+            <!--新闻相关的配置-->
+            <result name="getAllNewsTypeSuccess">/jsp/user/allnewstype.jsp</result>
+            <result name="getAllNewsTypeError">/jsp/sqlerror.jsp</result>
+            <result name="getNewsSuccess">/jsp/user/news.jsp</result>
+            <!--视频中心的配置-->
+            <result name="findVideo1Success">/jsp/user/video.jsp</result>
+            <result name="findVideo1Error">/jsp/sqlerror.jsp</result>
             <result name="input">/jsp/error.html</result>
 
         </action>

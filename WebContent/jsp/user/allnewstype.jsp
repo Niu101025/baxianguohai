@@ -43,7 +43,6 @@
 
 
 <body>
-
 <script src="https://qiyukf.com/script/e1cd14efd075fdfb7d833ce92ace638c.js"></script>
 <!--header开始-->
 
@@ -62,25 +61,21 @@
 
     <div class="header_bottom">
 
-
         <%--<s:a href="#"><h1><s:property value="%{websitename}"/></h1></s:a>--%>
         <s:a href="#"><img src="<s:property value="%{logo}"/>" width="72px" height="72px" alt=""></s:a>
         <ul>
             <li><a href="<%=basePath1%>index_findAll.action">网站首页</a></li>
-            <li><a href="<%=basePath1%>index_getAllNewsType.action?newsTypeId=-1">加盟公告</a></li>
-            <li><a href="<%=basePath1%>index_findVideo.action">视频中心</a></li>
-            <li><a href="<%=basePath1%>index_goInfoDetail.action">品牌简介</a></li>
             <li>
                 <div style="border-radius: 5px 5px 5px 5px; background: #E60013;padding-left: 10px;padding-right: 10px">
                     <%--href="<%=basePath1%>index_findAll.action"--%>
-                    <p class="p_header">饕餮盛宴</p>
+                    <p class="p_header">加盟公告</p>
                 </div>
             </li>
+            <li><a href="<%=basePath1%>index_findVideo.action">视频中心</a></li>
+            <li><a href="<%=basePath1%>index_goInfoDetail.action">品牌简介</a></li>
+            <li><a href="<%=basePath1%>index_getAllCate.action?categoryid=-1">饕餮盛宴</a></li>
             <li><a href="<%=basePath1%>index_goLeave.action">联系我们</a></li>
         </ul>
-
-
-
     </div>
 
 </div>
@@ -106,21 +101,21 @@
 
                 <ul class="ul_left">
 
-                    <s:iterator value="allCategory" var="c">
-                        <s:if test="#c.cid==categoryid">
+                    <s:iterator value="allNewsType" var="n">
+                        <s:if test="#n.newsTypeId==newsTypeId">
                             <li><h3><a style="color: red"
-                                       href="<%=basePath1%>index_getAllCate1.action?categoryid=<s:property
-                               value="#c.cid"/>"><s:property
-                                    value="#c.cname"/></a></h3>
+                                       href="<%=basePath1%>index_getAllNewsType1.action?newsTypeId=<s:property
+                               value="#n.newsTypeId"/>"><s:property
+                                    value="#n.newsTypeName"/></a></h3>
 
                             </li>
 
                         </s:if>
                         <s:else>
                             <li><h3><a
-                                    href="<%=basePath1%>index_getAllCate1.action?categoryid=<s:property
-                               value="#c.cid"/>"><s:property
-                                    value="#c.cname"/></a></h3>
+                                    href="<%=basePath1%>index_getAllNewsType1.action?newsTypeId=<s:property
+                               value="#n.newsTypeId"/>"><s:property
+                                    value="#n.newsTypeName"/></a></h3>
 
                             </li>
                         </s:else>
@@ -183,52 +178,20 @@
             </div>
         </div>
 
-        <div class="rightbar mar">
+        <div class="rightbar  mar newsDiv">
 
 
-            <ul id="masonry" class="ul_zj clearfix">
-
-
-                <s:iterator value="allProduct" var="p">
-
-                    <li class="box">
-
-                        <a href="<%=basePath1%>index_findProduct.action?pid=<s:property
-                          value="#p.pid"/>&categoryid=<s:property value="#p.category.cid"/>&ishome=false"><img
-                                src="<s:property value="#p.pimg"/>"
-                                width="220px">
-                            <span><s:property value="#p.pname"/></span>
+            <ul>
+                <s:iterator value="allNews" var="n">
+                    <li>
+                        <a href="<%=basePath1%>index_findNews.action?newsId=<s:property
+                          value="#n.newsId"/>&newsTypeId=<s:property value="#n.newsType.newsTypeId"/>">
+                            <span><s:property value="#n.newsTitle"/></span>
                         </a>
                     </li>
                 </s:iterator>
 
             </ul>
-            <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone"
-                                                                                              data-cmd="qzone"></a><a
-                    href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a
-                    href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin"
-                                                                         data-cmd="weixin"></a></div>
-            <script>window._bd_share_config = {
-                "common": {
-                    "bdSnsKey": {},
-                    "bdText": "",
-                    "bdMini": "2",
-                    "bdPic": "",
-                    "bdStyle": "0",
-                    "bdSize": "16"
-                },
-                "share": {},
-                "image": {
-                    "viewList": ["qzone", "tsina", "tqq", "renren", "weixin"],
-                    "viewText": "分享到：",
-                    "viewSize": "16"
-                },
-                "selectShare": {
-                    "bdContainerClass": null,
-                    "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin"]
-                }
-            };
-            with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
             <div class="paging"></div>
 
         </div>
