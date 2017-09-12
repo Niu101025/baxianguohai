@@ -46,10 +46,7 @@
 <div class="header">
 
     <div class="w1000">
-
         <p>你好，欢迎光临<s:property value="%{websitename}"/>！</p>
-
-
     </div>
 
 </div>
@@ -145,7 +142,7 @@
             </div>
         </div>
 
-        <div class="rightbar mar">
+        <div class="rightbar mar15">
 
 
             <div class="con_news">
@@ -186,7 +183,7 @@
                     </s:else>
                 </div>
                 <div>
-                    <p class="p_tit2">
+                    <p class="p_tit3">
 
                         <span><s:property value="%{pname}"/></span>
 

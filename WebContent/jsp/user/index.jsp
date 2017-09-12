@@ -124,68 +124,10 @@
     });</script>
 
     <!--banner结束-->
-
-
     <!--content开始-->
 
     <div class="content clearfix">
 
-
-        <%--<p class="p_tit1">热销产品</p>
-
-        <div class="picScroll-left">
-
-            <div class="hd">
-
-                <a class="next" style="margin-top: 70px"><</a>
-
-                <a class="prev" style="margin-top: 70px ">></a>
-
-            </div>
-
-            <div class="bd">
-
-                <ul class="picList">
-                    <s:iterator value="hotProduct" var="h">
-
-                        <li>
-
-                            <div class="pic">
-
-                                <a class="f14 pt10"
-                                   href="<%=basePath1%>index_findProduct.action?pid=<s:property value="#h.pid"/>&categoryid=-1&ishome=true"><img
-                                        src="<s:property value="#h.pimg"/>"
-                                        width="231"
-                                        height="308">
-                                    <s:property value="#h.pname"/>
-                                </a>
-                            </div>
-                        </li>
-                    </s:iterator>
-
-                </ul>
-
-            </div>
-
-
-            <!--为热销产品模块图片向左滚到-->
-
-            <script type="text/javascript">
-
-                jQuery(".picScroll-left").slide({
-                    titCell: ".hd ul",
-                    mainCell: ".bd ul",
-                    autoPage: true,
-                    effect: "left",
-                    autoPlay: true,
-                    vis: 4,
-                    trigger: "click"
-                });
-
-            </script>
-
-
-        </div>--%>
         <div class="leftbar mar">
             <div class="left_lx">
 
@@ -228,73 +170,20 @@
             <s:iterator value="showNewsBeans" var="showNews">
                 <div class="left_lx left_lx_height">
                     <h1><span><s:property value="#showNews.newsType.newsTypeName"/></span>
-                        <span style="float: right; border-bottom-width: 0px;"><a href="<%=basePath1%>index_getAllNewsType1.action?newsTypeId=<s:property
+                        <span style="float: right; border-bottom-width: 0px;"><a
+                                href="<%=basePath1%>index_getAllNewsType1.action?newsTypeId=<s:property
                                value="#showNews.newsType.newsTypeId"/>">查看更多</a></span>
                     </h1>
                     <ul>
                         <s:iterator value="#showNews.newsList" var="news">
                             <li><a href="<%=basePath1%>index_findNews.action?newsId=<s:property
-                          value="#news.newsId"/>&newsTypeId=<s:property value="#showNews.newsType.newsTypeId"/>"><s:property value="#news.newsTitle"/></a></li>
+                          value="#news.newsId"/>&newsTypeId=<s:property value="#showNews.newsType.newsTypeId"/>"><s:property
+                                    value="#news.newsTitle"/></a></li>
                         </s:iterator>
-
-
                     </ul>
                 </div>
 
             </s:iterator>
-
-            <%--  <div class="left_lx left_lx_height">
-                  <h1><span>新闻中心</span>
-                      <span style="float: right; border-bottom-width: 0px;"><a href="#">查看更多</a></span>
-                  </h1>
-                  <ul>
-                      <li><a href="#">11111</a></li>
-
-                  </ul>
-              </div>
-
-              <div class="left_lx left_lx_height">
-                  <h1><span>加盟信息</span>
-                      <span style="float: right; border-bottom-width: 0px;"><a href="#">查看更多</a></span>
-                  </h1>
-                  <ul>
-                      <li><a href="#">11111</a></li>
-                      <li><a href="#">11111</a></li>
-                      <li><a href="#">11111</a></li>
-                      <li><a href="#">11111</a></li>
-                      <li><a href="#">11111</a></li>
-                  </ul>
-              </div>
-
-              <div class="left_lx left_lx_height">
-                  <h1><span>最新动态</span>
-                      <span style="float: right; border-bottom-width: 0px;"><a href="#">查看更多</a></span>
-                  </h1>
-                  <ul>
-                      <li><a href="#">11111</a></li>
-                      <li><a href="#">11111</a></li>
-                      <li><a href="#">11111</a></li>
-                      <li><a href="#">11111</a></li>
-                      <li><a href="#">11111</a></li>
-                  </ul>
-              </div>--%>
-            <%--  <div class="left_lx">
-                  <h1><span>美味视频</span></h1>
-                  <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="270"
-                         height="200"
-                         poster="http://video-js.zencoder.com/oceans-clip.png"
-                         data-setup="{}">
-                      <source src="<%=basePath1%>videoviewdemo.mp4" type='video/mp4'/>
-                      <!-- Tracks need an ending tag thanks to IE9 -->
-                  </video>
-                  <script type="text/javascript">
-                      var myPlayer = videojs('example_video_1');
-                      videojs("example_video_1").ready(function () {
-                          var myPlayer = this;
-                          myPlayer.play();
-                      });
-                  </script>
-              </div>--%>
         </div>
 
 
@@ -305,8 +194,8 @@
                         <p class="p_tit1">热门小吃</p>
                         <div class="picScroll-left">
                             <div class="hd">
-                                <a class="next" style="margin-top: 100px"><</a>
-                                <a class="prev" style="margin-top: 100px ">></a>
+                                <a class="next" style="margin-top: 90px"><</a>
+                                <a class="prev" style="margin-top: 90px ">></a>
                             </div>
                             <div class="bd">
                                 <ul class="picList">
@@ -326,15 +215,12 @@
                             <!--为热销产品模块图片向左滚到-->
                             <script type="text/javascript">
                                 jQuery(".picScroll-left").slide({
-                                    delayTime: 5000,
-                                    interTime: 5000,
-                                    triggerTime: 5000,
                                     titCell: ".hd ul",
                                     mainCell: ".bd ul",
                                     autoPage: true,
-                                    effect: "left",
+                                    effect: "leftLoop",
                                     autoPlay: true,
-                                    vis: 1,
+                                    vis:1,
                                     trigger: "click"
                                 });
                             </script>
