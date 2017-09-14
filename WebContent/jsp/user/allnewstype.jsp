@@ -179,8 +179,6 @@
         </div>
 
         <div class="rightbar  mar newsDiv">
-
-
             <ul>
                 <s:iterator value="allNews" var="n">
                     <li>
@@ -190,7 +188,6 @@
                         </a>
                     </li>
                 </s:iterator>
-
             </ul>
             <div class="paging"></div>
 

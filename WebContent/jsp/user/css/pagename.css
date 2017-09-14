@@ -182,7 +182,7 @@ body {
 .content {
     margin: 0 auto;
     padding-bottom: 5px;
-    width: 80%;
+    width: 70%;
 }
 .content img{
     max-width: 100%;
@@ -382,11 +382,16 @@ body {
 
 .leftbar {
     float: left;
-    width: 270px;
+    width: 30%;
 }
 
 .mar {
     margin-top: 20px;
+}
+
+
+.mar8 {
+    margin-top: 8px;
 }
 
 .leftnav {
@@ -511,8 +516,13 @@ body {
 
 .rightbar {
     float: right;
-    width: 712px;
+    width: 70%;
     background-color: #fff;
+}
+
+.rightbar ul{
+    margin-top: -8px;
+    margin-left: 50px;
 }
 
 .bread {
@@ -571,6 +581,7 @@ body {
     line-height: 26px;
     color: #bcb2b2;
 }
+
 .p_tit3 {
     font-weight: bold;
     text-align: center;
@@ -674,14 +685,14 @@ body {
 }
 
 .contact_nei {
-    width: 680px;
+    width: 100%;
     padding: 10px 25px;
     min-height: 560px;
 }
 
 .contact_nei li {
     width: 680px;
-    text-align: left;
+    text-align: center;
     line-height: 24px;
     margin-top: 20px;
 }
@@ -818,8 +829,8 @@ body {
 }
 
 .picScroll-left .bd ul li .pic img {
-    width: 620px;
-    height: 308px;
+    width: 100%;
+    height: 330px;
     display: block;
     /*border: 0px solid #fff;*/
 }
@@ -905,16 +916,17 @@ body {
      cursor: pointer;*/
     font-size: 20px;
     padding: 10px;
-    list-style-type:decimal;
+    list-style-type: decimal;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #ccc;
     /*background: url("../images/ico_4.jpg") 0 -9px no-repeat;*/
 }
 
-.newsDiv ul li a{
+.newsDiv ul li a {
     color: #333333;
 }
-.newsDiv ul li a:hover{
+
+.newsDiv ul li a:hover {
     color: red;
 }
