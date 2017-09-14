@@ -184,6 +184,9 @@ body {
     padding-bottom: 5px;
     width: 80%;
 }
+.content img{
+    max-width: 100%;
+}
 
 .p_tit1 {
     text-align: center;
@@ -599,8 +602,13 @@ body {
 }
 
 .con {
+    max-width: 100%;
     color: #686868;
     line-height: 27px;
+}
+
+.con img{
+    max-width: 100%;
 }
 
 .maximg {

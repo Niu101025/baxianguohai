@@ -28,7 +28,7 @@
 			<strong><span class="icon-pencil-square-o"></span>添加</strong>
 		</div>
 		<div class="body-content">
-			<s:form method="post" class="form-x" action="category_saveCategory"
+			<s:form method="post" class="form-x" action="newsType_saveNewsType"
 				theme="simple">
 				<div class="form-group">
 					<s:hidden name="newsTypeId" value="%{newsTypeId}" />

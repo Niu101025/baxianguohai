@@ -31,13 +31,20 @@
     <link href="<%=basePath%>css/base.css" rel="stylesheet" type="text/css">
 
     <link href="<%=basePath%>css/pagename.css" rel="stylesheet" type="text/css">
-    <link href="<%=basePath%>css/video-js.min.css" rel="stylesheet" type="text/css">
+   <%-- <link href="<%=basePath%>css/video-js.min.css" rel="stylesheet" type="text/css">--%>
     <script type="text/javascript" src="<%=basePath%>js/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="<%=basePath%>js/video.min.js"></script>
+   <%-- <script type="text/javascript" src="<%=basePath%>js/video.min.js"></script>--%>
     <script type="text/javascript" src="<%=basePath%>js/jquery.SuperSlide.2.1.js"></script>
     <script type="text/javascript"
             src="http://api.map.baidu.com/api?v=2.0&ak=<s:property value="%{mapkey}"/>"></script>
-
+    <script type="text/javascript">
+        window.onload=function(){
+            var vi = document.getElementsByTagName("video")[0];
+            if(vi!=null){
+                vi.play();
+            }
+        }
+    </script>
 </head>
 
 
@@ -228,13 +235,15 @@
             <s:iterator value="showNewsBeans" var="showNews">
                 <div class="left_lx left_lx_height">
                     <h1><span><s:property value="#showNews.newsType.newsTypeName"/></span>
-                        <span style="float: right; border-bottom-width: 0px;"><a href="<%=basePath1%>index_getAllNewsType1.action?newsTypeId=<s:property
+                        <span style="float: right; border-bottom-width: 0px;"><a
+                                href="<%=basePath1%>index_getAllNewsType1.action?newsTypeId=<s:property
                                value="#showNews.newsType.newsTypeId"/>">查看更多</a></span>
                     </h1>
                     <ul>
                         <s:iterator value="#showNews.newsList" var="news">
                             <li><a href="<%=basePath1%>index_findNews.action?newsId=<s:property
-                          value="#news.newsId"/>&newsTypeId=<s:property value="#showNews.newsType.newsTypeId"/>"><s:property value="#news.newsTitle"/></a></li>
+                          value="#news.newsId"/>&newsTypeId=<s:property value="#showNews.newsType.newsTypeId"/>"><s:property
+                                    value="#news.newsTitle"/></a></li>
                         </s:iterator>
 
 
@@ -326,13 +335,10 @@
                             <!--为热销产品模块图片向左滚到-->
                             <script type="text/javascript">
                                 jQuery(".picScroll-left").slide({
-                                    delayTime: 5000,
-                                    interTime: 5000,
-                                    triggerTime: 5000,
                                     titCell: ".hd ul",
                                     mainCell: ".bd ul",
                                     autoPage: true,
-                                    effect: "left",
+                                    effect: "leftLoop",
                                     autoPlay: true,
                                     vis: 1,
                                     trigger: "click"
@@ -367,7 +373,6 @@
 
     </div>
     <div class="content">
-        <a href="<%=basePath%>template/introduce.html"></a><br>
         <s:property value="%{infodesc}" escape="false"/>
     </div>
     <!--content 结束-->
